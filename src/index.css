@@ -55,13 +55,15 @@ body {
 .letter-tabs {
   position: fixed;
   left: 0;
-  top: 50%;
+  max-height: calc(100vh - 3rem);
+  overflow: auto;
+  top: calc(50% + 1.5rem);
   transform: translateY(-50%);
   & > * {
     color: white;
     font-family: "Arial", sans-serif;
-    padding: 0.25rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.1rem 1rem;
+    font-size: 1.8vh;
     border-top-right-radius: 999rem;
     border-bottom-right-radius: 999rem;
     font-weight: bold;
