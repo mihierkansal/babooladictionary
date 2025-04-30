@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Times";
+  box-sizing: border-box;
+}
+
+h2 {
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background: #242424;
+  padding-left: 2rem;
+  padding-top: 5rem;
+}
+
+.definition-card {
+  padding: 1rem;
+  padding-left: 3rem;
+  width: calc(100vw - 4.5rem);
+  margin: 1rem;
+  overflow: auto;
+  background: linear-gradient(
+      to right,
+      transparent 2.5rem,
+      crimson 2.5rem,
+      crimson 2.55rem,
+      transparent 2.55rem
+    ),
+    linear-gradient(to bottom, #ffffee, #ffffee 3rem, transparent 3rem),
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 0.7rem,
+      #4488aa8c 0.7rem,
+      #4488aa8c 0.75rem,
+      transparent 0.75rem,
+      transparent 1.5rem
+    ),
+    #ffffee;
+  & h2 {
+    line-height: 4.3rem;
+    margin-bottom: 0.2rem;
+  }
+  & li {
+    line-height: 1.5rem;
+  }
+  & li {
+    padding-left: 1rem;
+    margin-left: -1rem;
+  }
+}
+
+.letter-tabs {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  & > * {
+    color: white;
+    font-family: "Arial", sans-serif;
+    padding: 0.25rem 1rem;
+    font-size: 0.8rem;
+    border-top-right-radius: 999rem;
+    border-bottom-right-radius: 999rem;
+    font-weight: bold;
+    cursor: pointer;
+    &:active,
+    &.active {
+      background: linear-gradient(to bottom, #4488aa 30%, #34576a 80%);
+    }
+  }
+}
+
+.paginator {
+  background: linear-gradient(to bottom, white, #ccc);
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 999rem;
+  box-shadow: 0 3px 7px #0008;
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  gap: 0.5rem;
+  width: 100vw;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: inset -0.5px -0.5px 0 black, 0 0 9px #0006;
+  background: linear-gradient(to bottom, white, #ccc);
+}
+
+button span,
+input,
+.toolbar,
+.toolbar * {
+  font-family: system-ui, sans-serif;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 999rem;
+  border: 1px solid #888;
+  background: linear-gradient(to bottom, white, #ccc);
+  cursor: pointer;
+  box-shadow: inset 0 0 9px #0001, 0 -2px 2px #0002, 0 2px 2px #fff;
+  text-shadow: 0 -1.2px 1px #0004, 0 1.2px 1px white;
+
+  transition: all 0.1s;
+
+  & > span {
+    transition: all 0.1s;
+    display: flex;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 11px #0006, 0 -2px 2px #0002, 0 2px 2px #fff;
+
+    & > span {
+      transform: scale(0.9);
+      color: #4488aa;
+    }
+  }
+}
+
+input {
+  padding: 0.5rem 0.5rem;
+  border-radius: 999rem;
+  border: 1px solid #888;
+  outline: 0;
+  box-shadow: inset 0 3px 5px #0005, 0 -2px 2px #0002, 0 2px 2px #fff;
+
+  width: 36rem;
+}
+
+.desktop {
+  @media screen and (max-width: 700px) {
+    display: none !important;
+  }
+}
+
+::-webkit-scrollbar {
+  background: linear-gradient(to right, #999, #ddd);
+  box-shadow: inset 0 2px 3px #0005;
+  width: 1rem;
+  border-left: 1px solid white;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #fff, #ccc);
+  box-shadow: inset 0 2px 3px #fff;
+}
+
+.input-container {
+  & button {
+    position: absolute;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-inline: 0.75rem;
+    padding-right: 0.7rem;
+  }
+  & input {
+    padding-left: 3rem;
+  }
+}
