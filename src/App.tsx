@@ -1,4 +1,4 @@
-import { createMemo, createSignal, For } from "solid-js";
+import { createMemo, createSignal, For, Show } from "solid-js";
 
 interface DictEntry {
   word: string;
@@ -170,11 +170,24 @@ function App() {
         </For>
       </div>
 
-      <For each={currentPageItems()}>
-        {(entry) => {
-          return <DefinitionCard entry={entry} />;
-        }}
-      </For>
+      <Show
+        when={paginatedLetterSections()?.length}
+        fallback={
+          <div
+            style={{
+              color: "white",
+            }}
+          >
+            Loading...
+          </div>
+        }
+      >
+        <For each={currentPageItems()}>
+          {(entry) => {
+            return <DefinitionCard entry={entry} />;
+          }}
+        </For>
+      </Show>
       <div class="paginator">
         <button
           disabled={
