@@ -1,8 +1,10 @@
 /* @refresh reload */
-import { render } from 'solid-js/web'
-import './index.css'
-import App from './App.tsx'
+import { render } from "solid-js/web";
+import "baboolastyles/public/plastic.css";
 
-const root = document.getElementById('root')
+import "./index.css";
+import App from "./App.tsx";
 
-render(() => <App />, root!)
+const root = document.getElementById("root");
+
+render(() => <App />, root!);
